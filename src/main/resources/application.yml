@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /api/v1/
+
+spring:
+  application:
+    name: Forum engine
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:test-task
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db-changelog.xml
