@@ -1,0 +1,11 @@
+version: '3.10'
+
+services:
+  application:
+    pull_policy: build
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: prod
+    ports:
+      - "8080:8080"
