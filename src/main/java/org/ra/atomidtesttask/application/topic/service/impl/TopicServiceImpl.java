@@ -1,5 +1,6 @@
 package org.ra.atomidtesttask.application.topic.service.impl;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.ra.atomidtesttask.application.exception.NotFoundException;
 import org.ra.atomidtesttask.application.message.service.MessageService;
@@ -36,6 +37,7 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
+    @Transactional
     public Topic saveWithInitialMessage(Topic topic, Message initial) {
         topic = repository.save(topic);
         initial.setTopic(topic);
