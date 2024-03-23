@@ -1,25 +1,19 @@
 package org.ra.atomidtesttask.domain.user;
 
 import jakarta.persistence.*;
-import lombok.*;
-
-import java.util.UUID;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 
 @Entity
-@Table(name = "usrs",
-uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"username"})
-})
+@Table(name = "usrs")
 @Getter
 @Setter
 @EqualsAndHashCode(of = {"username"})
 public class User {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
-
     private String username;
 
     @Enumerated(EnumType.STRING)

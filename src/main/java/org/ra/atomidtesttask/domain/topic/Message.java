@@ -21,7 +21,7 @@ public class Message {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(nullable = false, name = "user_id")
+    @JoinColumn(nullable = false, name = "user_username")
     private User user;
 
     @ManyToOne
