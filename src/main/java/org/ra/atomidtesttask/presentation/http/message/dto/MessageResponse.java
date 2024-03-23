@@ -13,7 +13,9 @@ import java.util.UUID;
 public class MessageResponse {
     private UUID id;
     private UUID topicId;
+    @Schema(example = "Message text")
     private String text;
+    @Schema(example = "example_username")
     private String authorUsername;
     private ZonedDateTime publishedAt;
 }
